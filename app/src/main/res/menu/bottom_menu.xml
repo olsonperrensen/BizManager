@@ -3,6 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:background="@color/main_background_color"
+        android:textColor="@color/main_text_color"
+        android:id="@+id/btnNightMode"
         android:icon="@drawable/ic_night"
         android:title="@string/nachtmodus"
         />
