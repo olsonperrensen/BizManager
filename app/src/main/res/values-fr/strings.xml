@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Chef d`entreprise</string>
+    <string name="titel">SBDINC Formes</string>
+    <string name="nachtmodus">Mode nuit</string>
+    <string name="btnPO">Mes bons de commande</string>
+    <string name="btnMedewerker">Mes travailleurs</string>
+</resources>
