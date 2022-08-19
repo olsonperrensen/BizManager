@@ -1,5 +1,6 @@
 package com.helvetica.bizmanager
 
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
@@ -56,6 +57,11 @@ class MainActivity : AppCompatActivity() {
                 menuItem.title = "Dark Mode"
                 sharedPrefsEdit.putBoolean("LightMode", true)
                 sharedPrefsEdit.apply()
+            }
+        }
+        binding.btnMedewerker.setOnClickListener {
+            Intent(this,SecondActivity::class.java).also {
+                startActivity(it)
             }
         }
     }
