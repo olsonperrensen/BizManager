@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ZaakManager</string>
+    <string name="titel">SBDINC Formulieren</string>
+    <string name="nachtmodus">Nachtmodus</string>
+    <string name="btnPO">Mijn PO`s</string>
+    <string name="btnMedewerker">Mijn Arbeiders</string>
+</resources>

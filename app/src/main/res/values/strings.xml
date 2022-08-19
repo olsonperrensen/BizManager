@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BizManager</string>
+    <string name="titel">SBDINC Forms</string>
+    <string name="nachtmodus">Night Mode</string>
+    <string name="btnPO">My Purchase Orders</string>
+    <string name="btnMedewerker">My Employees</string>
+</resources>
