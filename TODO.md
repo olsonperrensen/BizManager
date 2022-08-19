@@ -12,10 +12,10 @@
 - [ ] New to manage boolean of selection with click and long pressed on the figures (register id and set selection to enable to change visibility)
 
 # Items that must be included in the project:
-- [x] Different activities and use of intents
-- [x] Different layouts for portrait and landscape mode
-- [x] Different localization in at least two languages (English and Spanish)
-- [x] Two or more user settings
-- [x] `RecyclerView` use
-- [-] Use of a Database
-- [x] Internet usage
+- [ ] Different activities and use of intents
+- [ ] Different layouts for portrait and landscape mode
+- [ ] Different localization in at least two languages (English and Spanish)
+- [ ] Two or more user settings
+- [ ] `RecyclerView` use
+- [ ] Use of a Database
+- [ ] Internet usage
