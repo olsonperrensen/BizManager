@@ -4,4 +4,6 @@
     <string name="nachtmodus">Night Mode</string>
     <string name="btnPO">My Purchase Orders</string>
     <string name="btnMedewerker">My Employees</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>
