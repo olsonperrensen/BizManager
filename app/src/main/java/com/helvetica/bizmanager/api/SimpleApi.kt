@@ -4,7 +4,6 @@ import com.helvetica.bizmanager.model.Worker
 import com.helvetica.bizmanager.model.WorkerImg
 import retrofit2.Response
 import retrofit2.http.GET
-import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface SimpleApi {

@@ -8,8 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.helvetica.bizmanager.databinding.ActivitySecondBinding
 import com.helvetica.bizmanager.repository.Repository
 
@@ -43,7 +41,7 @@ class SecondActivity : AppCompatActivity() {
             }
         }
         viewModel.myResponseImg.observe(this) { response ->
-            myAdapter.setDataImg("https://randomuser.me/api/portraits/women/99.jpg")
+            myAdapter.setDataImg("https://randomuser.me/api/portraits/men/1.jpg")
             if (response.isSuccessful) {
 
             } else {
