@@ -3,6 +3,7 @@ package com.helvetica.bizmanager
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
@@ -34,5 +35,9 @@ class ThirdActivity : AppCompatActivity() {
                 "\tcountry:\t\t\t $land\n\n" +
                 "\tsbu:\t\t\t $sbu\n\n" +
                 "\tmanager:\t\t\t $manager\n\n"
+        binding.fab.setOnClickListener {
+            Toast.makeText(this,"Employee liked!",Toast.LENGTH_LONG).show()
+            finish()
+        }
     }
 }
