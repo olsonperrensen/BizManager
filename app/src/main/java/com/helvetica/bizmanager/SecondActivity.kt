@@ -1,43 +1,48 @@
 package com.helvetica.bizmanager
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.liveData
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.helvetica.bizmanager.api.RetrofitInstance
 import com.helvetica.bizmanager.databinding.ActivitySecondBinding
+import com.helvetica.bizmanager.model.Worker
+import com.helvetica.bizmanager.repository.Repository
 import retrofit2.Response
 
 class SecondActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySecondBinding
+    private lateinit var viewModel: SecondViewModel
+    private val myAdapter by lazy { RvEmployeesAdapter() }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_second)
-        val recyclerView = binding.rvEmployees
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = rvEmployeesAdapter()
-        val retService = RetrofitInstance.getRetrofitInstance()
-            .create(WorkerService::class.java)
-        val responseLiveData:LiveData<Response<Worker>> = liveData {
-            val response = retService.getWorkers()
-            emit(response)
-        }
-        responseLiveData.observe(this){
-            val workersList = it.body()?.listIterator()
-            if(workersList!=null)
+        setupRecyclerView()
+        val repository = Repository()
+        val viewModelFactory = SecondViewModelFactory(repository)
+        viewModel = ViewModelProvider(this, viewModelFactory)[SecondViewModel::class.java]
+        viewModel.getWorkers()
+        viewModel.myResponse.observe(this) { response ->
+            if(response.isSuccessful){
+                response.body()?.let { myAdapter.setData(it) }
+            }
+            else
             {
-                while (workersList.hasNext())
-                {
-                    val workerItem = workersList.next()
-                    Log.i("HI",workerItem.username)
-                }
+                Toast.makeText(this,response.code(),Toast.LENGTH_SHORT).show()
             }
         }
         binding.btnScdBack.setOnClickListener {
             finish()
         }
+    }
+
+    private fun setupRecyclerView() {
+        binding.rvEmployees.adapter = myAdapter
+        binding.rvEmployees.layoutManager = LinearLayoutManager(this)
     }
 }

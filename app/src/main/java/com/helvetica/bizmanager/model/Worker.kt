@@ -1,6 +1,6 @@
-package com.helvetica.bizmanager
+package com.helvetica.bizmanager.model
 
-data class WorkerItem(
+data class Worker(
     val id: Int,
     val land: String,
     val manager: String,
