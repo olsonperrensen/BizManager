@@ -41,11 +41,10 @@ class SecondActivity : AppCompatActivity() {
             }
         }
         viewModel.myResponseImg.observe(this) { response ->
-            myAdapter.setDataImg("https://randomuser.me/api/portraits/men/1.jpg")
             if (response.isSuccessful) {
-
+                response.body()?.let { myAdapter.setDataImg(it.url) }
             } else {
-                Log.d("IMGERR",response.code().toString())
+                Log.d("IMGERR", response.code().toString())
             }
         }
         binding.btnScdBack.setOnClickListener {
