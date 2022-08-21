@@ -1,5 +1,6 @@
 package com.helvetica.bizmanager
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,6 +26,7 @@ class RvEmployeesAdapter() : RecyclerView.Adapter<RvEmployeesAdapter.MyViewHolde
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.itemView.findViewById<TextView>(R.id.tvNaamData).text = myList[position].naam
         holder.bind(myListImg[position])
+        holder.setDetails(myList[position])
     }
 
     override fun getItemCount(): Int {
@@ -52,6 +54,20 @@ class RvEmployeesAdapter() : RecyclerView.Adapter<RvEmployeesAdapter.MyViewHolde
             ).fitCenter().skipMemoryCache(true).diskCacheStrategy(DiskCacheStrategy.NONE)
                 .placeholder(R.drawable.user)
                 .into(ivPhoto)
+        }
+
+        fun setDetails(worker: Worker) {
+            btnEdit.setOnClickListener {
+                val intent = Intent(view.context, ThirdActivity::class.java)
+                intent.putExtra("id", worker.id.toString())
+                intent.putExtra("username", worker.username)
+                intent.putExtra("password", worker.password)
+                intent.putExtra("naam", worker.naam)
+                intent.putExtra("land", worker.land)
+                intent.putExtra("sbu", worker.sbu)
+                intent.putExtra("manager", worker.manager)
+                view.context.startActivity(intent)
+            }
         }
     }
 }

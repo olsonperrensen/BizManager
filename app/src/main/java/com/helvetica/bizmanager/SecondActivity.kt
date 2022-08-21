@@ -1,7 +1,9 @@
 package com.helvetica.bizmanager
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -18,7 +20,6 @@ class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_second)
-        val img = findViewById<ImageView>(R.id.ivPhoto)
         setupRecyclerView()
         val repository = Repository()
         val viewModelFactory = SecondViewModelFactory(repository)
@@ -42,6 +43,7 @@ class SecondActivity : AppCompatActivity() {
         binding.btnScdBack.setOnClickListener {
             finish()
         }
+
     }
 
     private fun setupRecyclerView() {
