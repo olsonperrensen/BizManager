@@ -26,7 +26,7 @@ class RvEmployeesAdapter() : RecyclerView.Adapter<RvEmployeesAdapter.MyViewHolde
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.itemView.findViewById<TextView>(R.id.tvNaamData).text = myList[position].naam
         holder.bind(myListImg[position])
-        holder.setDetails(myList[position])
+        holder.setDetails(myList[position],myListImg[position])
     }
 
     override fun getItemCount(): Int {
@@ -56,9 +56,10 @@ class RvEmployeesAdapter() : RecyclerView.Adapter<RvEmployeesAdapter.MyViewHolde
                 .into(ivPhoto)
         }
 
-        fun setDetails(worker: Worker) {
+        fun setDetails(worker: Worker,imgURL: WorkerImg) {
             btnEdit.setOnClickListener {
                 val intent = Intent(view.context, ThirdActivity::class.java)
+                intent.putExtra("img",imgURL.url)
                 intent.putExtra("id", worker.id.toString())
                 intent.putExtra("username", worker.username)
                 intent.putExtra("password", worker.password)
