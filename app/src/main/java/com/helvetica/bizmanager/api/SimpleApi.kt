@@ -9,9 +9,7 @@ import retrofit2.http.Query
 interface SimpleApi {
     @GET("/workers")
     suspend fun getWorkers(): Response<List<Worker>>
+
     @GET("/img")
-    suspend fun getWorkersImg(
-        @Query("workerGenre") genre: String,
-        @Query("workerNumber") number: Int
-    ): Response<WorkerImg>
+    suspend fun getWorkersImg(): Response<List<WorkerImg>>
 }

@@ -11,7 +11,7 @@ import retrofit2.Response
 
 class SecondViewModel(private val repository: Repository) : ViewModel() {
     val myResponse: MutableLiveData<Response<List<Worker>>> = MutableLiveData()
-    val myResponseImg: MutableLiveData<Response<WorkerImg>> = MutableLiveData()
+    val myResponseImg: MutableLiveData<Response<List<WorkerImg>>> = MutableLiveData()
 
     fun getWorkers() {
         viewModelScope.launch {
@@ -19,9 +19,9 @@ class SecondViewModel(private val repository: Repository) : ViewModel() {
             myResponse.value = response
         }
     }
-    fun getWorkersImg(genre:String,number: Int) {
+    fun getWorkersImg() {
         viewModelScope.launch {
-            val response = repository.getWorkersImg(genre,number)
+            val response = repository.getWorkersImg()
             myResponseImg.value = response
         }
     }

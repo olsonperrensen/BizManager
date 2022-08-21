@@ -9,7 +9,7 @@ class Repository {
     suspend fun getWorkers(): Response<List<Worker>> {
         return RetrofitInstance.api.getWorkers()
     }
-    suspend fun getWorkersImg(genre:String,number:Int): Response<WorkerImg> {
-        return RetrofitInstance.api.getWorkersImg(genre,number)
+    suspend fun getWorkersImg(): Response<List<WorkerImg>> {
+        return RetrofitInstance.api.getWorkersImg()
     }
 }

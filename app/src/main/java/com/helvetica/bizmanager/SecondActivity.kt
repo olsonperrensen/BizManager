@@ -24,15 +24,7 @@ class SecondActivity : AppCompatActivity() {
         val viewModelFactory = SecondViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory)[SecondViewModel::class.java]
         viewModel.getWorkers()
-        var counter = 0
-        while (counter < 100) {
-            if (counter % 2 === 0) {
-                viewModel.getWorkersImg("men", counter)
-            } else {
-                viewModel.getWorkersImg("women", counter)
-            }
-            counter++
-        }
+        viewModel.getWorkersImg()
         viewModel.myResponse.observe(this) { response ->
             if (response.isSuccessful) {
                 response.body()?.let { myAdapter.setData(it) }
@@ -42,7 +34,7 @@ class SecondActivity : AppCompatActivity() {
         }
         viewModel.myResponseImg.observe(this) { response ->
             if (response.isSuccessful) {
-                response.body()?.let { myAdapter.setDataImg(it.url) }
+                response.body()?.let { myAdapter.setDataImg(it) }
             } else {
                 Log.d("IMGERR", response.code().toString())
             }

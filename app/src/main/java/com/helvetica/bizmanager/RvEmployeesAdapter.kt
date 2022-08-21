@@ -10,10 +10,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.helvetica.bizmanager.model.Worker
+import com.helvetica.bizmanager.model.WorkerImg
 
 class RvEmployeesAdapter() : RecyclerView.Adapter<RvEmployeesAdapter.MyViewHolder>() {
     private var myList = emptyList<Worker>()
-    private var myWorkerImgUrl = ""
+    private var myListImg = emptyList<WorkerImg>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -23,7 +24,7 @@ class RvEmployeesAdapter() : RecyclerView.Adapter<RvEmployeesAdapter.MyViewHolde
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.itemView.findViewById<TextView>(R.id.tvNaamData).text = myList[position].naam
-        holder.bind(myWorkerImgUrl)
+        holder.bind(myListImg[position])
     }
 
     override fun getItemCount(): Int {
@@ -35,8 +36,8 @@ class RvEmployeesAdapter() : RecyclerView.Adapter<RvEmployeesAdapter.MyViewHolde
         notifyDataSetChanged()
     }
 
-    fun setDataImg(newImg: String) {
-        myWorkerImgUrl = newImg
+    fun setDataImg(newListImg: List<WorkerImg>) {
+        myListImg = newListImg
         notifyDataSetChanged()
     }
 
@@ -45,9 +46,9 @@ class RvEmployeesAdapter() : RecyclerView.Adapter<RvEmployeesAdapter.MyViewHolde
         val tvNaam = view.findViewById<TextView>(R.id.tvNaam)
         val tvNaamData = view.findViewById<TextView>(R.id.tvNaamData)
         val btnEdit = view.findViewById<Button>(R.id.btnEdit)
-        fun bind(imgURL: String) {
+        fun bind(imgURL: WorkerImg) {
             Glide.with(view.context).load(
-                imgURL
+                imgURL.url
             ).fitCenter().skipMemoryCache(true).diskCacheStrategy(DiskCacheStrategy.NONE)
                 .placeholder(R.drawable.user)
                 .into(ivPhoto)
