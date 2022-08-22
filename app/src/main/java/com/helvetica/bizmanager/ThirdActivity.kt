@@ -68,7 +68,7 @@ class ThirdActivity : AppCompatActivity() {
                 manager
             )
         ) {
-            val user = User(0, id.toInt(), land, manager, naam, password, sbu, username)
+            val user = User(0, id.toInt(), land, manager, naam, password, sbu, username, img)
             userViewModel.addUser(user)
             Toast.makeText(this, "Employee liked!", Toast.LENGTH_LONG).show()
             finish()

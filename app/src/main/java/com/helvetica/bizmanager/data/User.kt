@@ -13,5 +13,6 @@ data class User(
     val naam: String,
     val password: String,
     val sbu: String,
-    val username: String
+    val username: String,
+    val imageSrc: String
 )
