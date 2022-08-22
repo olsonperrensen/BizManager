@@ -30,21 +30,36 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         binding.navView.setNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.miItem1 -> Toast.makeText(
-                    applicationContext,
-                    "Clicked Item 1",
-                    Toast.LENGTH_SHORT
-                ).show()
-                R.id.miItem2 -> Toast.makeText(
-                    applicationContext,
-                    "Clicked Item 2",
-                    Toast.LENGTH_SHORT
-                ).show()
-                R.id.miItem3 -> Toast.makeText(
-                    applicationContext,
-                    "Clicked Item 3",
-                    Toast.LENGTH_SHORT
-                ).show()
+                R.id.miItem1 -> {
+                    Toast.makeText(
+                        applicationContext,
+                        "Launching Purchase Orders",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    Intent(this, FourthActivity::class.java).also { activity ->
+                        startActivity(activity)
+                    }
+                }
+                R.id.miItem2 -> {
+                    Toast.makeText(
+                        applicationContext,
+                        "Launching Employees",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    Intent(this, SecondActivity::class.java).also { activity ->
+                        startActivity(activity)
+                    }
+                }
+                R.id.miItem3 -> {
+                    Toast.makeText(
+                        applicationContext,
+                        "Launching My Liked Employees",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    Intent(this, FifthActivity::class.java).also { activity ->
+                        startActivity(activity)
+                    }
+                }
 
             }
             true
@@ -90,6 +105,11 @@ class MainActivity : AppCompatActivity() {
         }
         binding.btnMedewerker.setOnClickListener {
             Intent(this, SecondActivity::class.java).also {
+                startActivity(it)
+            }
+        }
+        binding.btnPO.setOnClickListener {
+            Intent(this, FourthActivity::class.java).also {
                 startActivity(it)
             }
         }

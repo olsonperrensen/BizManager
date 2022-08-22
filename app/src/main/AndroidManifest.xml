@@ -18,6 +18,12 @@
         android:theme="@style/Theme.BizManager"
         tools:targetApi="31">
         <activity
+            android:name=".FifthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FourthActivity"
+            android:exported="false" />
+        <activity
             android:name=".PreviewActivity"
             android:exported="true">
             <intent-filter>
