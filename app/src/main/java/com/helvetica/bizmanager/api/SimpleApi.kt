@@ -1,5 +1,6 @@
 package com.helvetica.bizmanager.api
 
+import com.helvetica.bizmanager.model.Heroku
 import com.helvetica.bizmanager.model.Worker
 import com.helvetica.bizmanager.model.WorkerImg
 import retrofit2.Response
@@ -12,4 +13,7 @@ interface SimpleApi {
 
     @GET("/img")
     suspend fun getWorkersImg(): Response<List<WorkerImg>>
+
+    @GET("/")
+    suspend fun getHeroku(): Response<Heroku>
 }
