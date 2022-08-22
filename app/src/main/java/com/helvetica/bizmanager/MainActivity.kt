@@ -13,6 +13,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.helvetica.bizmanager.databinding.ActivityMainBinding
+import com.helvetica.bizmanager.dialog.LoadingDialog
 import java.util.*
 
 class MainActivity : AppCompatActivity() {

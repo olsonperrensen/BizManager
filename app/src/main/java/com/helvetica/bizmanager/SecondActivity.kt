@@ -2,6 +2,7 @@ package com.helvetica.bizmanager
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
@@ -11,6 +12,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.helvetica.bizmanager.databinding.ActivitySecondBinding
+import com.helvetica.bizmanager.dialog.LoadingDialog
 import com.helvetica.bizmanager.repository.Repository
 
 class SecondActivity : AppCompatActivity() {
@@ -24,6 +26,12 @@ class SecondActivity : AppCompatActivity() {
         val repository = Repository()
         val viewModelFactory = SecondViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory)[SecondViewModel::class.java]
+        val loadingDialog = LoadingDialog(this)
+        var firstTime = viewModel.getFirstTime()
+        if(firstTime)
+        {
+            loadingDialog.startLoadingDialog()
+        }
         viewModel.getWorkers()
         viewModel.getWorkersImg()
         viewModel.myResponse.observe(this) { response ->
@@ -39,6 +47,15 @@ class SecondActivity : AppCompatActivity() {
             } else {
                 Log.d("IMGERR", response.code().toString())
             }
+            if (firstTime) {
+                Handler().postDelayed({
+                    loadingDialog.dismissDialog()
+                }, 5000)
+            }
+            else{
+                loadingDialog.dismissDialog()
+            }
+            viewModel.setFirstTime(false)
         }
         binding.btnScdBack.setOnClickListener {
             finish()

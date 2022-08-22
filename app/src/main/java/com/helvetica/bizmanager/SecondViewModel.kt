@@ -12,17 +12,26 @@ import retrofit2.Response
 class SecondViewModel(private val repository: Repository) : ViewModel() {
     val myResponse: MutableLiveData<Response<List<Worker>>> = MutableLiveData()
     val myResponseImg: MutableLiveData<Response<List<WorkerImg>>> = MutableLiveData()
-
+    private var firstTime = true
     fun getWorkers() {
         viewModelScope.launch {
             val response = repository.getWorkers()
             myResponse.value = response
         }
     }
+
     fun getWorkersImg() {
         viewModelScope.launch {
             val response = repository.getWorkersImg()
             myResponseImg.value = response
         }
+    }
+
+    fun getFirstTime(): Boolean {
+        return firstTime
+    }
+
+    fun setFirstTime(u_bool: Boolean) {
+        firstTime = u_bool
     }
 }
