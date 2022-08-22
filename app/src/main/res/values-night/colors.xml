@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="employees_bg_box">#FF9900</color>
+    <color name="employees_bg_details">#8E0030</color>
+    <color name="employees_show_more">#9C27B0</color>
     <color name="purple_200">#FF03DAC5</color>
     <color name="purple_500">#FF018786</color>
     <color name="purple_700">#E91E63</color>

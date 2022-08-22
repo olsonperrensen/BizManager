@@ -6,17 +6,17 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFC107"
+        android:background="@color/employees_bg_details"
         tools:context=".ThirdActivity">
 
         <TextView
             android:id="@+id/tvDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#000000"
+            android:background="@color/secondary_background_color"
             android:padding="28dp"
             android:text="TextView"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/secondary_text_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
