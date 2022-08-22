@@ -7,39 +7,22 @@
     android:padding="24dp">
 
     <TextView
-        android:id="@+id/tvLikedId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="29dp"
-        android:layout_marginBottom="42dp"
-        android:text="TextView"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tvLikedImage"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
         android:id="@+id/tvLikedName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
+        android:layout_width="170sp"
+        android:layout_height="60sp"
+        android:layout_marginStart="20dp"
         android:text="TextView"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvLikedImage"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvLikedImage"
-        app:layout_constraintTop_toTopOf="@+id/tvLikedImage" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/tvLikedImage"
-        android:layout_width="40dp"
-        android:layout_height="67dp"
-        android:layout_marginEnd="47dp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvLikedId"
-        app:layout_constraintEnd_toStartOf="@+id/tvLikedName"
-        app:layout_constraintStart_toEndOf="@+id/tvLikedId"
-        app:layout_constraintTop_toTopOf="@+id/tvLikedId"
+        android:layout_width="77sp"
+        android:layout_height="77sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

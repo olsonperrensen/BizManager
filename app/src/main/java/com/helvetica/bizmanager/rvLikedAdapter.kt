@@ -27,7 +27,6 @@ class rvLikedAdapter : RecyclerView.Adapter<rvLikedAdapter.MyViewHolder>() {
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = userList[position]
-        holder.itemView.findViewById<TextView>(R.id.tvLikedId).text = currentItem.id.toString()
         holder.itemView.findViewById<TextView>(R.id.tvLikedName).text = currentItem.naam
         Glide.with(holder.itemView.context).load(
             currentItem.imageSrc
