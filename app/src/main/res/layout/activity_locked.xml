@@ -12,10 +12,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="9dp"
-            android:text="YOUR APP HAS BEEN LOCKED. REINSTALL IT TO WORK AGAIN"
+            android:text="YOUR APP HAS BEEN LOCKED. UNLOCK IT TO WORK AGAIN"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bnv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="2dp"
+            android:background="@color/main_background_color"
+            android:textColor="@color/main_text_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/bottom_menu_locked" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

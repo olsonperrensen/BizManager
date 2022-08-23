@@ -136,6 +136,11 @@ class MainActivity : AppCompatActivity() {
             bindingLocked = DataBindingUtil.setContentView(this, R.layout.activity_locked)
             viewModel = ViewModelProvider(this)[MainActivityViewModel::class.java]
             Toast.makeText(this,"Welcome to the Early Testing!!",Toast.LENGTH_LONG).show()
+            val btnUnlock = findViewById<BottomNavigationItemView>(R.id.btnUnlock).setOnClickListener {
+                sharedPrefsEdit.putBoolean("isLocked", false)
+                sharedPrefsEdit.apply()
+                finish()
+            }
         }
     }
 
