@@ -12,7 +12,6 @@ class RvPOsAdapter() : RecyclerView.Adapter<RvPOsAdapter.MyViewHolder>() {
     private var myList = emptyList<PO>()
 
     class MyViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
-        val tvPODetails = view.findViewById<TextView>(R.id.tvPODetails)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -22,8 +21,19 @@ class RvPOsAdapter() : RecyclerView.Adapter<RvPOsAdapter.MyViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.itemView.findViewById<TextView>(R.id.tvPODetails).text =
-            myList[position].requested_by
+        holder.itemView.findViewById<TextView>(R.id.tvPOId).text = myList[position].id
+        holder.itemView.findViewById<TextView>(R.id.tvPODatum).text = myList[position].datum
+        holder.itemView.findViewById<TextView>(R.id.tvPOCompany).text = myList[position].company
+        holder.itemView.findViewById<TextView>(R.id.tvPOCompanyCode).text = myList[position].company_code
+        holder.itemView.findViewById<TextView>(R.id.tvPOShortText).text = myList[position].short_text
+        holder.itemView.findViewById<TextView>(R.id.tvPOQuantity).text = myList[position].po_quantity
+        holder.itemView.findViewById<TextView>(R.id.tvPOOverallLimit).text = myList[position].overall_limit
+        holder.itemView.findViewById<TextView>(R.id.tvPOGRExecutionDate).text = myList[position].gr_execution_date
+        holder.itemView.findViewById<TextView>(R.id.tvPOSBU).text = myList[position].sbu
+        holder.itemView.findViewById<TextView>(R.id.tvPOStatus).text = myList[position].status
+        holder.itemView.findViewById<TextView>(R.id.tvPOInvoice).text = myList[position].invoice
+        holder.itemView.findViewById<TextView>(R.id.tvPOGR).text = myList[position].gr
+        holder.itemView.findViewById<TextView>(R.id.tvPOManager).text = myList[position].manager
     }
 
     override fun getItemCount(): Int {

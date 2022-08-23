@@ -2,17 +2,197 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clListItem"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/employees_bg_box">
 
     <TextView
-        android:id="@+id/tvPODetails"
+        android:id="@+id/tvPOOverallLimit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/secondary_text_color"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/ivPO"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="OVERALL LIMIT" />
+
+    <TextView
+        android:id="@+id/tvPORequestedBy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/secondary_text_color"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPOId"
+        tools:text="REQUESTED BY" />
+
+    <TextView
+        android:id="@+id/tvPOInvoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginBottom="40dp"
+        android:textColor="@color/secondary_text_color"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvPOGR"
+        app:layout_constraintStart_toStartOf="@+id/tvPOManager"
+        tools:text="INVOICE" />
+
+    <TextView
+        android:id="@+id/tvPOQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="29dp"
+        android:textColor="@color/secondary_text_color"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/tvPOGRExecutionDate"
+        app:layout_constraintTop_toBottomOf="@+id/tvPOShortText"
+        tools:text="PO QUANTITY" />
+
+    <TextView
+        android:id="@+id/tvPOSBU"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="30dp"
+        android:textColor="@color/secondary_text_color"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvPOStatus"
+        app:layout_constraintStart_toStartOf="@+id/tvPOStatus"
+        tools:text="SBU" />
+
+    <TextView
+        android:id="@+id/tvPODatum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/secondary_text_color"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/tvPOCompany"
+        app:layout_constraintTop_toBottomOf="@+id/tvPORequestedBy"
+        tools:text="DATUM" />
+
+    <TextView
+        android:id="@+id/tvPOManager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/secondary_text_color"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnPOShowEmployee"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="MANAGER" />
+
+    <TextView
+        android:id="@+id/tvPOId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:textColor="@color/secondary_text_color"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPOOverallLimit"
+        tools:text="ID" />
+
+    <TextView
+        android:id="@+id/tvPOShortText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="21dp"
+        android:textColor="@color/secondary_text_color"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/tvPOCompanyCode"
+        app:layout_constraintTop_toBottomOf="@+id/tvPOCompanyCode"
+        tools:text="SHORT TEXT" />
+
+    <TextView
+        android:id="@+id/tvPOCompanyCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="61dp"
+        android:textColor="@color/secondary_text_color"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPODatum"
+        tools:text="COMPANY CODE" />
+
+    <TextView
+        android:id="@+id/tvPOStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginBottom="43dp"
+        android:textColor="@color/secondary_text_color"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvPOInvoice"
+        app:layout_constraintStart_toStartOf="@+id/tvPOInvoice"
+        tools:text="STATUS" />
+
+    <TextView
+        android:id="@+id/tvPOGR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginBottom="29dp"
+        android:textColor="@color/secondary_text_color"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvPOManager"
+        app:layout_constraintStart_toStartOf="@+id/tvPOManager"
+        tools:text="GR" />
+
+    <TextView
+        android:id="@+id/tvPOGRExecutionDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="119dp"
+        android:layout_marginBottom="31dp"
+        android:textColor="@color/secondary_text_color"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvPOSBU"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="GR EXECUTION DATE" />
+
+    <TextView
+        android:id="@+id/tvPOCompany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="19dp"
+        android:textColor="@color/secondary_text_color"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvPOCompanyCode"
+        app:layout_constraintStart_toStartOf="@+id/tvPOCompanyCode"
+        tools:text="COMPANY" />
+
+    <ImageView
+        android:id="@+id/ivPO"
+        android:layout_width="72dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/user"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnPOShowEmployee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:backgroundTint="#4CAF50"
+        android:text="SHOW EMPLOYEE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

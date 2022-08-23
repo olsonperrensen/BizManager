@@ -44,10 +44,10 @@ class RvEmployeesAdapter() : RecyclerView.Adapter<RvEmployeesAdapter.MyViewHolde
     }
 
     class MyViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
-        val ivPhoto = view.findViewById<ImageView>(R.id.ivPhoto)
+        val ivPhoto = view.findViewById<ImageView>(R.id.ivPO)
         val tvNaam = view.findViewById<TextView>(R.id.tvNaam)
         val tvNaamData = view.findViewById<TextView>(R.id.tvNaamData)
-        val btnEdit = view.findViewById<Button>(R.id.btnEdit)
+        val btnEdit = view.findViewById<Button>(R.id.btnPOShowEmployee)
         fun bind(imgURL: WorkerImg) {
             Glide.with(view.context).load(
                 imgURL.url
