@@ -15,4 +15,11 @@
         android:icon="@drawable/ic_baseline_code_24"
         android:title="About"
         />
+    <item
+        android:background="@color/main_background_color"
+        android:textColor="@color/main_text_color"
+        android:id="@+id/btnLock"
+        android:icon="@drawable/ic_baseline_vpn_lock_24"
+        android:title="Lock App"
+        />
 </menu>
