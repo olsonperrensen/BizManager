@@ -2,6 +2,7 @@
 <resources>
     <color name="employees_bg_box">#FF9900</color>
     <color name="employees_bg_details">#8E0030</color>
+    <color name="employees_bg_details_two">#FFFFFF</color>
     <color name="employees_show_more">#9C27B0</color>
     <color name="purple_200">#FF03DAC5</color>
     <color name="purple_500">#FF018786</color>

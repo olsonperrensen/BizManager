@@ -176,7 +176,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:textColor="@color/employees_bg_details"
+        android:textColor="@color/employees_bg_details_two"
         android:background="@color/employees_show_more"
         android:textSize="15sp"
         android:textStyle="bold"
