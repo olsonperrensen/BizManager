@@ -5,4 +5,6 @@
     <string name="nachtmodus">Nachtmodus</string>
     <string name="btnPO">Mijn PO`s</string>
     <string name="btnMedewerker">Mijn Arbeiders</string>
+    <string name="hyperlink"><a href="https://github.com/olsonperrensen/BizManager">https://github.com/olsonperrensen/BizManager</a></string>
+    <string name="hyperlink2"><a href="https://github.com/olsonperrensen/forms">https://github.com/olsonperrensen/forms</a></string>
 </resources>

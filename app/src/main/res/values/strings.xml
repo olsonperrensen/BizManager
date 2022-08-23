@@ -6,4 +6,6 @@
     <string name="btnMedewerker">My Employees</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="hyperlink"><a href="https://github.com/olsonperrensen/BizManager">https://github.com/olsonperrensen/BizManager</a></string>
+    <string name="hyperlink2"><a href="https://github.com/olsonperrensen/forms">https://github.com/olsonperrensen/forms</a></string>
 </resources>

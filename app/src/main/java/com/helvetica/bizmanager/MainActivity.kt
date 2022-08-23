@@ -5,12 +5,14 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.helvetica.bizmanager.databinding.ActivityMainBinding
 import com.helvetica.bizmanager.dialog.LoadingDialog
@@ -70,6 +72,7 @@ class MainActivity : AppCompatActivity() {
         val navView = findViewById<BottomNavigationView>(R.id.bnv)
         val menuItem = navView.menu.findItem(R.id.btnNightMode)
         val menuItemFix = findViewById<View>(R.id.btnNightMode)
+        val btnAbout = findViewById<BottomNavigationItemView>(R.id.btnAbout)
         val userLang = Locale.getDefault().displayLanguage
         if (isLight) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
@@ -110,6 +113,11 @@ class MainActivity : AppCompatActivity() {
         }
         binding.btnPO.setOnClickListener {
             Intent(this, FourthActivity::class.java).also {
+                startActivity(it)
+            }
+        }
+        btnAbout.setOnClickListener {
+            Intent(this,AboutActivity::class.java).also {
                 startActivity(it)
             }
         }

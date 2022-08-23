@@ -4,5 +4,7 @@
     <string name="titel">SBDINC Formen</string>
     <string name="nachtmodus">Nacht-Modus</string>
     <string name="btnPO">Meine Bestellungen</string>
+    <string name="hyperlink"><a href="https://github.com/olsonperrensen/BizManager">https://github.com/olsonperrensen/BizManager</a></string>
     <string name="btnMedewerker">Meine Arbeiter</string>
+    <string name="hyperlink2"><a href="https://github.com/olsonperrensen/forms">https://github.com/olsonperrensen/forms</a></string>
 </resources>
