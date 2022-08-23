@@ -50,7 +50,7 @@ class SecondActivity : AppCompatActivity() {
             if (firstTime) {
                 Handler().postDelayed({
                     loadingDialog.dismissDialog()
-                }, 5000)
+                }, 1000)
             }
             else{
                 loadingDialog.dismissDialog()
