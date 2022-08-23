@@ -22,6 +22,7 @@ class RvPOsAdapter() : RecyclerView.Adapter<RvPOsAdapter.MyViewHolder>() {
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.itemView.findViewById<TextView>(R.id.tvPOId).text = myList[position].id
+        holder.itemView.findViewById<TextView>(R.id.tvPORequestedBy).text = myList[position].requested_by
         holder.itemView.findViewById<TextView>(R.id.tvPODatum).text = myList[position].datum
         holder.itemView.findViewById<TextView>(R.id.tvPOCompany).text = myList[position].company
         holder.itemView.findViewById<TextView>(R.id.tvPOCompanyCode).text = myList[position].company_code
