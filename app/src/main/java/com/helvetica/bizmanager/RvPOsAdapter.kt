@@ -1,9 +1,12 @@
 package com.helvetica.bizmanager
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.RecyclerView
 import com.helvetica.bizmanager.model.PO
 import com.helvetica.bizmanager.model.Worker
@@ -22,7 +25,8 @@ class RvPOsAdapter() : RecyclerView.Adapter<RvPOsAdapter.MyViewHolder>() {
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.itemView.findViewById<TextView>(R.id.tvPOId).text = myList[position].id
-        holder.itemView.findViewById<TextView>(R.id.tvPORequestedBy).text = myList[position].requested_by
+        val employeeName = holder.itemView.findViewById<TextView>(R.id.tvPORequestedBy)
+        employeeName.text = myList[position].requested_by
         holder.itemView.findViewById<TextView>(R.id.tvPODatum).text = myList[position].datum
         holder.itemView.findViewById<TextView>(R.id.tvPOCompany).text = myList[position].company
         holder.itemView.findViewById<TextView>(R.id.tvPOCompanyCode).text = myList[position].company_code
@@ -35,6 +39,11 @@ class RvPOsAdapter() : RecyclerView.Adapter<RvPOsAdapter.MyViewHolder>() {
         holder.itemView.findViewById<TextView>(R.id.tvPOInvoice).text = myList[position].invoice
         holder.itemView.findViewById<TextView>(R.id.tvPOGR).text = myList[position].gr
         holder.itemView.findViewById<TextView>(R.id.tvPOManager).text = myList[position].manager
+        holder.itemView.findViewById<Button>(R.id.btnPOShowEmployee).setOnClickListener {
+            val intent = Intent(holder.view.context,SecondActivity::class.java)
+            intent.putExtra("employeeName",employeeName.text.toString())
+            holder.view.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
