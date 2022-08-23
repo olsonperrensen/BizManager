@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.helvetica.bizmanager.data.User
 
-class rvLikedAdapter : RecyclerView.Adapter<rvLikedAdapter.MyViewHolder>() {
+class RvLikedAdapter : RecyclerView.Adapter<RvLikedAdapter.MyViewHolder>() {
 
     private var userList = emptyList<User>()
 

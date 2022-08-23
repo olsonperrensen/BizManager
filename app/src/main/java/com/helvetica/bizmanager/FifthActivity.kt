@@ -17,7 +17,7 @@ class FifthActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_fifth)
         viewModel = ViewModelProvider(this)[UserViewModel::class.java]
         val recyclerView = binding.rvLiked
-        val adapter = rvLikedAdapter()
+        val adapter = RvLikedAdapter()
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
         viewModel.readAllData.observe(this) { user ->

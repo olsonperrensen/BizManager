@@ -2,6 +2,7 @@ package com.helvetica.bizmanager.repository
 
 import com.helvetica.bizmanager.api.RetrofitInstance
 import com.helvetica.bizmanager.model.Heroku
+import com.helvetica.bizmanager.model.PO
 import com.helvetica.bizmanager.model.Worker
 import com.helvetica.bizmanager.model.WorkerImg
 import retrofit2.Response
@@ -15,5 +16,8 @@ class Repository {
     }
     suspend fun getHeroku(): Response<Heroku> {
         return RetrofitInstance.api.getHeroku()
+    }
+    suspend fun getPOs(): Response<List<PO>> {
+        return RetrofitInstance.api.getPOs()
     }
 }
