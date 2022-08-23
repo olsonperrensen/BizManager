@@ -14,12 +14,14 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.helvetica.bizmanager.databinding.ActivityLockedBinding
 import com.helvetica.bizmanager.databinding.ActivityMainBinding
 import com.helvetica.bizmanager.dialog.LoadingDialog
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var bindingLocked: ActivityLockedBinding
     private lateinit var viewModel: MainActivityViewModel
     private lateinit var toggle: ActionBarDrawerToggle
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -130,6 +132,10 @@ class MainActivity : AppCompatActivity() {
                 sharedPrefsEdit.apply()
                 finish()
             }
+        } else {
+            bindingLocked = DataBindingUtil.setContentView(this, R.layout.activity_locked)
+            viewModel = ViewModelProvider(this)[MainActivityViewModel::class.java]
+            Toast.makeText(this,"Welcome to the Early Testing!!",Toast.LENGTH_LONG).show()
         }
     }
 
