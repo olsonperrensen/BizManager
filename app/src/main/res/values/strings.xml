@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">BizManager</string>
-    <string name="titel">SBDINC Forms</string>
+    <string name="titel">SBDINC form</string>
     <string name="nachtmodus">Night Mode</string>
     <string name="btnPO">My Purchase Orders</string>
     <string name="btnMedewerker">My Employees</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
     <string name="hyperlink"><a href="https://github.com/olsonperrensen/BizManager">https://github.com/olsonperrensen/BizManager</a></string>
-    <string name="hyperlink2"><a href="https://github.com/olsonperrensen/forms">https://github.com/olsonperrensen/forms</a></string>
+    <string name="hyperlink2"><a href="https://github.com/olsonperrensen/form">https://github.com/olsonperrensen/form</a></string>
 </resources>
