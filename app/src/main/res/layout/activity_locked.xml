@@ -18,7 +18,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="45dp"
             android:layout_marginEnd="10dp"
-            android:text=""
+            android:text="@string/ransomware"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.555"
             app:layout_constraintStart_toStartOf="parent"
