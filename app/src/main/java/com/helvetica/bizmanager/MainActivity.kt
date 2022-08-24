@@ -137,6 +137,7 @@ class MainActivity : AppCompatActivity() {
             bindingLocked = DataBindingUtil.setContentView(this, R.layout.activity_locked)
             bindingLocked.lifecycleOwner = this
             viewModel = ViewModelProvider(this)[MainActivityViewModel::class.java]
+            var counter = 0
             Toast.makeText(this, "Welcome to the Early Testing!!", Toast.LENGTH_LONG).show()
             val btnUnlock =
                 findViewById<BottomNavigationItemView>(R.id.btnUnlock).setOnClickListener {
@@ -146,12 +147,24 @@ class MainActivity : AppCompatActivity() {
                         sharedPrefsEdit.apply()
                         finish()
                     } else {
-                        Toast.makeText(
-                            this,
-                            "Try again with a different number!",
-                            Toast.LENGTH_LONG
-                        ).show()
+                        if (counter < 10)
+                        {
+                            Toast.makeText(
+                                this,
+                                "Try again with a different number!",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
+                        else
+                        {
+                            Toast.makeText(
+                                this,
+                                "Alright, give up! The pwd is 1234",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
                     }
+                    counter++
                 }
         }
     }
