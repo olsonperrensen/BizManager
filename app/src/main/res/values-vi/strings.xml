@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name = "app_name"> BizManager </string>
+    <string name = "titel"> Biểu mẫu SBDINC </string>
+    <string name = "nachtmodus"> Chế độ ban đêm </string>
+    <string name = "btnPO"> Đơn đặt hàng của tôi </string>
+    <string name = "btnMedewerker"> Nhân viên của tôi </string>
+    <string name = "open"> Mở </string>
+    <string name = "close"> Đóng </string>
+    <string name = "hyperlink"> <a href="https://github.com/olsonperrensen/BizManager"> https://github.com/olsonperrensen/BizManager </a> </string>
+    <string name = "hyperlink2"> <a href="https://github.com/olsonperrensen/form"> https://github.com/olsonperrensen/form </a> </string>
+    <string name = "love"> Được làm bằng ♥ ️ tại Mechelen </string>
+    <string name = "inspired"> Lấy cảm hứng từ Biểu mẫu SBDINC </string>
+    <string name = "appname"> Tên ứng dụng: SBDINC BizManager (Biểu mẫu) </string>
+    <string name = "dev"> Nhà phát triển &amp; amp; Người bảo trì: Max Cardozo </string>
+    <string name = "backend"> Backend: NodeJS, Express, PostgreSQL được lưu trữ trên Heroku </string>
+    <string name = "loading"> Đang tải hình ảnh </string>
+    <string name = "loading5s"> Đang tải hình ảnh (5 giây) </string>
+    <string name = "liname"> Tên: </string>
+    <string name = "showmore"> hiển thị thêm </string>
+    <string name = "showemployee"> HIỂN THỊ NHÂN VIÊN </string>
+    <string name = "about"> Giới thiệu </string>
+    <string name = "lockapp"> Khóa ứng dụng </string>
+    <string name = "unlockapp"> Mở khóa ứng dụng </string>
+    <string name = "navpo"> Đơn đặt hàng </string>
+    <string name = "navemp"> Nhân viên </string>
+    <string name = "navlike"> Nhân viên được yêu thích của tôi </string>
+</resources>

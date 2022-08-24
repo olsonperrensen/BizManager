@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BizManager</string>
+    <string name="titel">formulario SBDINC</string>
+    <string name="nachtmodus">Modo nocturno</string>
+    <string name="btnPO">Mis órdenes de compra</string>
+    <string name="btnMedewerker">Mis empleados</string>
+    <string name="open">Abrir</string>
+    <string name="close">Cerrar</string>
+    <string name="hyperlink"><a href="https://github.com/olsonperrensen/BizManager">https://github.com/olsonperrensen/BizManager</a></string>
+    <string name="hyperlink2"><a href="https://github.com/olsonperrensen/form">https://github.com/olsonperrensen/form</a></string>
+    <string name="love">Hecho con ♥️ en Malinas</string>
+    <string name="inspired">Inspirado en formularios SBDINC</string>
+    <string name="appname">Nombre de la aplicación: SBDINC BizManager (Formularios)</string>
+    <string name="dev">Desarrollador &amp; Mantenedor: Max Cardozo</string>
+    <string name="backend">Backend: NodeJS, Express, PostgreSQL alojado en Heroku</string>
+    <string name="loading">Cargando Imágenes</string>
+    <string name="loading5s">Cargando Imágenes (5s)</string>
+    <string name="liname">Nombre: </string>
+    <string name="showmore">mostrar más</string>
+    <string name="showemployee">MOSTRAR EMPLEADO</string>
+    <string name="about">Acerca de</string>
+    <string name="lockapp">Bloquear aplicación</string>
+    <string name="unlockapp">Desbloquear aplicación</string>
+    <string name="navpo">Órdenes de Compra</string>
+    <string name="navemp">Empleados</string>
+    <string name="navlike">Mis empleados favoritos</string>
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BizManager</string>
+    <string name="titel">แบบฟอร์ม SBDINC</string>
+    <string name="nachtmodus">โหมดกลางคืน</string>
+    <string name="btnPO">ใบสั่งซื้อของฉัน</string>
+    <string name="btnMedewerker">พนักงานของฉัน</string>
+    <string name="open">เปิด</string>
+    <string name="close">ปิด</string>
+    <string name="hyperlink"><a href="https://github.com/olsonperrensen/BizManager">https://github.com/olsonperrensen/BizManager</a></string>
+    <string name="hyperlink2"><a href="https://github.com/olsonperrensen/form">https://github.com/olsonperrensen/form</a></string>
+    <string name="love">ทำด้วย ♥️ ในเมเคอเลน</string>
+    <string name="inspired">แรงบันดาลใจจากแบบฟอร์ม SBDINC</string>
+    <string name="appname">ชื่อแอป: SBDINC BizManager (แบบฟอร์ม)</string>
+    <string name="dev">ผู้พัฒนา &amp; ผู้ดูแล: แม็กซ์ คาร์โดโซ่</string>
+    <string name="backend">แบ็กเอนด์: NodeJS, Express, PostgreSQL ที่โฮสต์บน Heroku</string>
+    <string name="loading">กำลังโหลดรูปภาพ</string>
+    <string name="loading5s">กำลังโหลดรูปภาพ (5 วินาที)</string>
+    <string name="liname">ชื่อ : </string>
+    <string name="showmore">แสดงเพิ่มเติม</string>
+    <string name="showemployee">แสดงพนักงาน</string>
+    <string name="about">เกี่ยวกับ</string>
+    <string name="lockapp">ล็อกแอป</string>
+    <string name="unlockapp">ปลดล็อกแอป</string>
+    <string name="navpo">ใบสั่งซื้อ</string>
+    <string name="navemp">พนักงาน</string>
+    <string name="navlike">พนักงานที่ฉันชอบ</string>
+</resources>

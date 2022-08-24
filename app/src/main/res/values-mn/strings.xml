@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BizManager</string>
+    <string name="titel">SBDINC хэлбэр</string>
+    <string name="nachtmodus">Шөнийн горим</string>
+    <string name="btnPO">Миний худалдан авалтын захиалга</string>
+    <string name="btnMedewerker">Миний ажилчид</string>
+    <string name="open">Нээх</string>
+    <string name="close">Хаах</string>
+    <string name="hyperlink"><a href="https://github.com/olsonperrensen/BizManager">https://github.com/olsonperrensen/BizManager</a></string>
+    <string name="hyperlink2"><a href="https://github.com/olsonperrensen/form">https://github.com/olsonperrensen/form</a></string>
+    <string name="love">Mechelen-д ♥️-аар хийсэн</string>
+    <string name="inspired">SBDINC маягтаас санаа авсан</string>
+    <string name="appname">Програмын нэр: SBDINC BizManager (Маягт)</string>
+    <string name="dev">Хөгжүүлэгч &amp; Засварлагч: Макс Кардозо</string>
+    <string name="backend">Арын төгсгөл: Heroku дээр байрлуулсан NodeJS, Express, PostgreSQL</string>
+    <string name="loading">Зургийг ачаалж байна</string>
+    <string name = "loading5s" >Зургийг ачаалж байна (5 секунд)</string>
+    <string name="liname">Нэр : </string>
+    <string name = "showmore">илүү харуулах</string>
+    <string name = "showemployee">АЖИЛТНЫГ ХАРУУЛАХ</string>
+    <string name="about">Тухай</string>
+    <string name="lockapp">Програмыг түгжих</string>
+    <string name="unlockapp">Програмын түгжээг тайлах</string>
+    <string name="navpo">Худалдан авах захиалга</string>
+    <string name="navemp">Ажилчид</string>
+    <string name="navlike">Надад таалагдсан ажилчид</string>
+</resources>

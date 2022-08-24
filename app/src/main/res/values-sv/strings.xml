@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BizManager</string>
+    <string name="titel">SBDINC-formulär</string>
+    <string name="nachtmodus">Nattläge</string>
+    <string name="btnPO">Mina inköpsorder</string>
+    <string name="btnMedewerker">Mina anställda</string>
+    <string name="open">Öppna</string>
+    <string name="close">Stäng</string>
+    <string name="hyperlink"><a href="https://github.com/olsonperrensen/BizManager">https://github.com/olsonperrensen/BizManager</a></string>
+    <string name="hyperlink2"><a href="https://github.com/olsonperrensen/form">https://github.com/olsonperrensen/form</a></string>
+    <string name="love">Gjord med ♥️ i Mechelen</string>
+    <string name="inspired">Inspirerad av SBDINC Forms</string>
+    <string name="appname">Appnamn: SBDINC BizManager (Forms)</string>
+    <string name="dev">Utvecklare &amp; Underhållare: Max Cardozo</string>
+    <string name="backend">Backend: NodeJS, Express, PostgreSQL värd på Heroku</string>
+    <string name="loading">Läser in bilder</string>
+    <string name="loading5s">Laddar in bilder (5s)</string>
+    <string name="liname">Namn : </string>
+    <string name="showmore">visa mer</string>
+    <string name="showemployee">VISA ANSTÄLLD</string>
+    <string name="about">Om</string>
+    <string name="lockapp">Lås appen</string>
+    <string name="unlockapp">Lås upp app</string>
+    <string name="navpo">Inköpsorder</string>
+    <string name="navemp">Anställda</string>
+    <string name="navlike">Mina gillade anställda</string>
+</resources>

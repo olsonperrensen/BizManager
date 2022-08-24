@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">БизМенеджер</string>
+    <string name="titel">форма SBDINC</string>
+    <string name="nachtmodus">Ночной режим</string>
+    <string name="btnPO">Мои заказы на покупку</string>
+    <string name="btnMedewerker">Мои сотрудники</string>
+    <string name="open">Открыть</string>
+    <string name="close">Закрыть</string>
+    <string name="hyperlink"><a href="https://github.com/olsonperrensen/BizManager">https://github.com/olsonperrensen/BizManager</a></string>
+    <string name="hyperlink2"><a href="https://github.com/olsonperrensen/form">https://github.com/olsonperrensen/form</a></string>
+    <string name="love">Сделано с ♥️ в Мехелене</string>
+    <string name="inspired">На основе форм SBDINC</string>
+    <string name="appname">Имя приложения: SBDINC BizManager (Формы)</string>
+    <string name="dev">Разработчик &amp; Сопровождающий: Макс Кардозо</string>
+    <string name="backend">Бэкенд: NodeJS, Express, PostgreSQL, размещенный на Heroku</string>
+    <string name="loading">Загрузка изображений</string>
+    <string name="loading5s">Загрузка изображений (5 с)</string>
+    <string name="liname">Имя: </string>
+    <string name="showmore">показать больше</string>
+    <string name="showemployee">ПОКАЗАТЬ СОТРУДНИКОВ</string>
+    <string name="about">О</string>
+    <string name="lockapp">Заблокировать приложение</string>
+    <string name="unlockapp">Разблокировать приложение</string>
+    <string name="navpo">Заказы на покупку</string>
+    <string name="navemp">Сотрудники</string>
+    <string name="navlike">Мои любимые сотрудники</string>
+</resources>
