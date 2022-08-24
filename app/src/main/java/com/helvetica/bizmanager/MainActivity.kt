@@ -3,6 +3,7 @@ package com.helvetica.bizmanager
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
@@ -134,13 +135,24 @@ class MainActivity : AppCompatActivity() {
             }
         } else {
             bindingLocked = DataBindingUtil.setContentView(this, R.layout.activity_locked)
+            bindingLocked.lifecycleOwner = this
             viewModel = ViewModelProvider(this)[MainActivityViewModel::class.java]
-            Toast.makeText(this,"Welcome to the Early Testing!!",Toast.LENGTH_LONG).show()
-            val btnUnlock = findViewById<BottomNavigationItemView>(R.id.btnUnlock).setOnClickListener {
-                sharedPrefsEdit.putBoolean("isLocked", false)
-                sharedPrefsEdit.apply()
-                finish()
-            }
+            Toast.makeText(this, "Welcome to the Early Testing!!", Toast.LENGTH_LONG).show()
+            val btnUnlock =
+                findViewById<BottomNavigationItemView>(R.id.btnUnlock).setOnClickListener {
+                    Log.i("debug", "val ${bindingLocked.etPwd.text.toString()}")
+                    if (bindingLocked.etPwd.text.toString() == "1234") {
+                        sharedPrefsEdit.putBoolean("isLocked", false)
+                        sharedPrefsEdit.apply()
+                        finish()
+                    } else {
+                        Toast.makeText(
+                            this,
+                            "Try again with a different number!",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                }
         }
     }
 
