@@ -4,7 +4,7 @@ BizManager is a simple application that lets you like and choose between your em
 <img src="https://u.cubeupload.com/olsonperrensen2/user.jpg" height="68" width="68" >
 <img src="https://u.cubeupload.com/olsonperrensen2/Screenshot2022082416.png" height="448" width="229">
 <img src="https://u.cubeupload.com/olsonperrensen2/e81Screenshot2022082416.png" height="448" width="229">
-<img src="https://u.cubeupload.com/olsonperrensen2/b87Screenshot2022082416.png" height="448" width="229">
+<img src="https://u.cubeupload.com/olsonperrensen2/528Screenshot2022082416.png" height="448" width="229">
 <img src="https://u.cubeupload.com/olsonperrensen2/1f3Screenshot2022082416.png" height="229" width="448">
 <img src="https://u.cubeupload.com/olsonperrensen2/cefScreenshot2022082416.png" height="448" width="229">
 <img src="https://u.cubeupload.com/olsonperrensen2/ddbScreenshot2022082416.png" height="448" width="229">
