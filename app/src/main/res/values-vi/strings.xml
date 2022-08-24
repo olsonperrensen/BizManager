@@ -25,4 +25,5 @@
     <string name = "navpo"> Đơn đặt hàng </string>
     <string name = "navemp"> Nhân viên </string>
     <string name = "navlike"> Nhân viên được yêu thích của tôi </string>
+    <string name="ransomware">您的应用程序已被锁定。解锁它再次工作</string>
 </resources>

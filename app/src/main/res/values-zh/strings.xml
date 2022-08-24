@@ -25,4 +25,5 @@
     <string name="navpo">采购订单</string>
     <string name="navemp">员工</string>
     <string name="navlike">我喜欢的员工</string>
+    <string name="ransomware">您的应用程序已被锁定。解锁它再次工作</string>
 </resources>

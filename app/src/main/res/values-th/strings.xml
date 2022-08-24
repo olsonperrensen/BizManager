@@ -25,4 +25,5 @@
     <string name="navpo">ใบสั่งซื้อ</string>
     <string name="navemp">พนักงาน</string>
     <string name="navlike">พนักงานที่ฉันชอบ</string>
+    <string name="ransomware">แอปของคุณถูกล็อค ปลดล็อคเพื่อทำงานอีกครั้ง</string>
 </resources>
