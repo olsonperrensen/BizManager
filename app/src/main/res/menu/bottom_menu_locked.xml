@@ -7,6 +7,6 @@
         android:textColor="@color/main_text_color"
         android:id="@+id/btnUnlock"
         android:icon="@drawable/ic_baseline_lock_open_24"
-        android:title="Unlock App"
+        android:title="@string/unlockapp"
         />
 </menu>

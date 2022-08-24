@@ -5,6 +5,24 @@
     <string name="nachtmodus">Nachtmodus</string>
     <string name="btnPO">Mijn PO`s</string>
     <string name="btnMedewerker">Mijn Arbeiders</string>
+    <string name="open">Open</string>
+    <string name="close">Sluiten</string>
     <string name="hyperlink"><a href="https://github.com/olsonperrensen/BizManager">https://github.com/olsonperrensen/BizManager</a></string>
     <string name="hyperlink2"><a href="https://github.com/olsonperrensen/form">https://github.com/olsonperrensen/form</a></string>
+    <string name="love">Gemaakt met ♥️ in Mechelen</string>
+    <string name="inspired">Geïnspireerd door SBDINC Forms</string>
+    <string name="appname">App-naam: SBDINC BizManager (Formulieren)</string>
+    <string name="dev">Ontwikkelaar &amp; Beheerder: Max Cardozo</string>
+    <string name="backend">Backend: NodeJS, Express, PostgreSQL gehost op Heroku</string>
+    <string name="loading">Beelden laden</string>
+    <string name="loading5s">Beelden laden (5s)</string>
+    <string name="liname">Naam: </string>
+    <string name="showmore">meer weergeven</string>
+    <string name="showemployee">TOON WERKNEMER</string>
+    <string name="about">Over</string>
+    <string name="lockapp">App vergrendelen</string>
+    <string name="unlockapp">App ontgrendelen</string>
+    <string name="navpo">Aankooporders</string>
+    <string name="navemp">Werknemers</string>
+    <string name="navlike">Mijn favoriete medewerkers</string>
 </resources>

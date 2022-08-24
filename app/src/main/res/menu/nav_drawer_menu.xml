@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/miItem1"
-        android:title="Purchase Orders" />
+        android:title="@string/navpo" />
     <item android:id="@+id/miItem2"
-        android:title="Employees" />
+        android:title="@string/navemp" />
 <item android:id="@+id/miItem3"
-    android:title="My Liked Employees" />
+    android:title="@string/navlike" />
 </menu>

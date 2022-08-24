@@ -4,7 +4,25 @@
     <string name="titel">SBDINC Formen</string>
     <string name="nachtmodus">Nacht-Modus</string>
     <string name="btnPO">Meine Bestellungen</string>
+    <string name="open">Öffnen</string>
+    <string name="close">Schließen</string>
     <string name="hyperlink"><a href="https://github.com/olsonperrensen/BizManager">https://github.com/olsonperrensen/BizManager</a></string>
     <string name="btnMedewerker">Meine Arbeiter</string>
     <string name="hyperlink2"><a href="https://github.com/olsonperrensen/form">https://github.com/olsonperrensen/form</a></string>
+    <string name="love">Hergestellt mit ♥️ in Mechelen</string>
+    <string name="inspired">Inspiriert von SBDINC-Formularen</string>
+    <string name="appname">App-Name: SBDINC BizManager (Formulare)</string>
+    <string name="dev">Entwickler &amp; Betreuer: Max Cardozo</string>
+    <string name="backend">Backend: NodeJS, Express, PostgreSQL gehostet auf Heroku</string>
+    <string name="loading">Lade Bilder</string>
+    <string name="loading5s">Lade Bilder (5s)</string>
+    <string name="liname">Name : </string>
+    <string name="showmore">mehr anzeigen</string>
+    <string name="showemployee">MITARBEITER ZEIGEN</string>
+    <string name="about">Über</string>
+    <string name="lockapp">App sperren</string>
+    <string name="unlockapp">App entsperren</string>
+    <string name="navpo">Bestellungen</string>
+    <string name="navemp">Mitarbeiter</string>
+    <string name="navlike">Meine gemochten Mitarbeiter</string>
 </resources>

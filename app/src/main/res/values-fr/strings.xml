@@ -5,6 +5,24 @@
     <string name="nachtmodus">Mode nuit</string>
     <string name="btnPO">Mes bons de commande</string>
     <string name="btnMedewerker">Mes travailleurs</string>
+    <string name="open">Ouvrir</string>
+    <string name="close">Fermer</string>
     <string name="hyperlink"><a href="https://github.com/olsonperrensen/BizManager">https://github.com/olsonperrensen/BizManager</a></string>
     <string name="hyperlink2"><a href="https://github.com/olsonperrensen/form">https://github.com/olsonperrensen/form</a></string>
+    <string name="love">Fait avec ♥️ à Malines</string>
+    <string name="inspired">Inspiré des formulaires SBDINC</string>
+    <string name="appname">Nom de l\'application : SBDINC BizManager (Formulaires)</string>
+    <string name="dev">Développeur &amp; Responsable : Max Cardozo</string>
+    <string name="backend">Backend : NodeJS, Express, PostgreSQL hébergé sur Heroku</string>
+    <string name="loading">Charger des images</string>
+    <string name="loading5s">Charger des images (5s)</string>
+    <string name="liname">Nom : </string>
+    <string name="showmore">afficher plus</string>
+    <string name="showemployee">AFFICHER L\'EMPLOYÉ</string>
+    <string name="about">À propos</string>
+    <string name="lockapp">Verrouiller l\'application</string>
+    <string name="unlockapp">Déverrouiller l\'application</string>
+    <string name="navpo">Bons de commande</string>
+    <string name="navemp">Employés</string>
+    <string name="navlike">Mes employés aimés</string>
 </resources>

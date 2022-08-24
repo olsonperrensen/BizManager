@@ -38,7 +38,7 @@
             android:layout_margin="16dp"
             android:layout_marginStart="14dp"
             android:layout_marginTop="16dp"
-            android:text="App Name: SBDINC BizManager (Forms)"
+            android:text="@string/appname"
             android:textSize="10dp"
             app:layout_constraintStart_toEndOf="@+id/ivAbout"
             app:layout_constraintTop_toTopOf="parent" />
@@ -50,7 +50,7 @@
             android:layout_margin="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="Developer &amp; Maintainer: Max Cardozo"
+            android:text="@string/dev"
             android:textSize="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -74,7 +74,7 @@
             android:layout_margin="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="Inspired by SBDINC Forms"
+            android:text="@string/inspired"
             android:textSize="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -85,7 +85,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:layout_marginBottom="16dp"
-            android:text="Made with ♥️ in Mechelen"
+            android:text="@string/love"
             android:textSize="44dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -98,7 +98,7 @@
             android:layout_margin="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="Backend: NodeJS, Express, PostgreSQL hosted on Heroku"
+            android:text="@string/backend"
             app:layout_constraintStart_toEndOf="@+id/ivAbout"
             app:layout_constraintTop_toBottomOf="@+id/textView"
             android:textSize="10dp" />

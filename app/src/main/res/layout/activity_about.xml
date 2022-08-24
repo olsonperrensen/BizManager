@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="22dp"
             android:layout_marginTop="50dp"
-            android:text="App Name: SBDINC BizManager (Forms)"
+            android:text="@string/appname"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivAbout" />
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="22dp"
             android:layout_marginTop="50dp"
-            android:text="Developer &amp; Maintainer: Max Cardozo"
+            android:text="@string/dev"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -69,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="22dp"
             android:layout_marginTop="50dp"
-            android:text="Backend: NodeJS, Express, PostgreSQL hosted on Heroku"
+            android:text="@string/backend"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvSrc" />
@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="22dp"
             android:layout_marginTop="50dp"
-            android:text="Inspired by SBDINC Forms"
+            android:text="@string/inspired"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -91,7 +91,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="22dp"
             android:layout_marginTop="50dp"
-            android:text="Made with ♥️ in Mechelen"
+            android:text="@string/love"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvSrc2" />

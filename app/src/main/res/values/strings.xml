@@ -8,4 +8,20 @@
     <string name="close">Close</string>
     <string name="hyperlink"><a href="https://github.com/olsonperrensen/BizManager">https://github.com/olsonperrensen/BizManager</a></string>
     <string name="hyperlink2"><a href="https://github.com/olsonperrensen/form">https://github.com/olsonperrensen/form</a></string>
+    <string name="love">Made with ♥️ in Mechelen</string>
+    <string name="inspired">Inspired by SBDINC Forms</string>
+    <string name="appname">App Name: SBDINC BizManager (Forms)</string>
+    <string name="dev">Developer &amp; Maintainer: Max Cardozo</string>
+    <string name="backend">Backend: NodeJS, Express, PostgreSQL hosted on Heroku</string>
+    <string name="loading">Loading Images</string>
+    <string name="loading5s">Loading Images (5s)</string>
+    <string name="liname">Name : </string>
+    <string name="showmore">show more</string>
+    <string name="showemployee">SHOW EMPLOYEE</string>
+    <string name="about">About</string>
+    <string name="lockapp">Lock App</string>
+    <string name="unlockapp">Unlock App</string>
+    <string name="navpo">Purchase Orders</string>
+    <string name="navemp">Employees</string>
+    <string name="navlike">My Liked Employees</string>
 </resources>

@@ -215,7 +215,7 @@
         android:layout_marginTop="4dp"
         android:layout_marginBottom="4dp"
         android:backgroundTint="#4CAF50"
-        android:text="SHOW EMPLOYEE"
+        android:text="@string/showemployee"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
