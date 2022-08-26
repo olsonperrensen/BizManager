@@ -90,9 +90,9 @@ class SecondActivity : AppCompatActivity(),
     }
 
     fun filterList(newText: String) {
-        val myFullListOfWorkers: List<Worker> = myAdapter.myList
         val myFilteredList = mutableListOf<Worker>()
-        for (worker in myFullListOfWorkers) {
+        val myClearedList = myFilteredList
+        for (worker in myAdapter.myList) {
             if (newText.uppercase() in worker.naam) {
                 myFilteredList.add(worker)
             }
@@ -103,6 +103,7 @@ class SecondActivity : AppCompatActivity(),
                 "You haven't hired anyone with that name yet :(",
                 Toast.LENGTH_SHORT
             ).show()
+            myAdapter.setData(myClearedList)
         } else {
             myAdapter.setData(myFilteredList)
         }
