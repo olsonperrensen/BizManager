@@ -34,6 +34,8 @@ class SecondActivity : AppCompatActivity(),
         val viewModelFactory = SecondViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory)[SecondViewModel::class.java]
         var loadingDialog = LoadingDialog(this)
+        val intent = intent
+        val passedEmployeeName = intent.getStringExtra("employeeName").toString()
         var firstTime = viewModel.getFirstTime()
         if (firstTime) {
             loadingDialog.startLoadingDialog()
@@ -46,6 +48,7 @@ class SecondActivity : AppCompatActivity(),
             } else {
                 Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
             }
+            onQueryTextChange(passedEmployeeName)
         }
         viewModel.myResponseImg.observe(this) { response ->
             if (response.isSuccessful) {
@@ -66,7 +69,6 @@ class SecondActivity : AppCompatActivity(),
         binding.btnScdBack.setOnClickListener {
             finish()
         }
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -93,6 +95,7 @@ class SecondActivity : AppCompatActivity(),
         val myFilteredList = mutableListOf<Worker>()
         val myClearedList = myFilteredList
         for (worker in myAdapter.myList) {
+            Log.d("JFFFFF","Was asked to search for $newText (now at ${worker.naam}")
             if (newText.uppercase() in worker.naam) {
                 myFilteredList.add(worker)
             }
