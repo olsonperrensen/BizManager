@@ -26,7 +26,7 @@ class SecondActivity : AppCompatActivity() {
         val repository = Repository()
         val viewModelFactory = SecondViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory)[SecondViewModel::class.java]
-        val loadingDialog = LoadingDialog(this)
+        var loadingDialog = LoadingDialog(this)
         var firstTime = viewModel.getFirstTime()
         if(firstTime)
         {
@@ -52,8 +52,9 @@ class SecondActivity : AppCompatActivity() {
                     loadingDialog.dismissDialog()
                 }, 1000)
             }
-            else{
+            else if(loadingDialog != null){
                 loadingDialog.dismissDialog()
+
             }
             viewModel.setFirstTime(false)
         }

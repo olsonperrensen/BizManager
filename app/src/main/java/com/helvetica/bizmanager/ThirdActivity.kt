@@ -31,19 +31,32 @@ class ThirdActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_third)
         userViewModel = ViewModelProvider(this)[UserViewModel::class.java]
         val intent = intent
-        img = intent.getStringExtra("img").toString()
-        id = intent.getStringExtra("id").toString()
-        username = intent.getStringExtra("username").toString()
-        password = intent.getStringExtra("password").toString()
-        naam = intent.getStringExtra("naam").toString()
-        land = intent.getStringExtra("land").toString()
-        sbu = intent.getStringExtra("sbu").toString()
-        manager = intent.getStringExtra("manager").toString()
-        Glide.with(this).load(
-            img
-        ).fitCenter().skipMemoryCache(true).diskCacheStrategy(DiskCacheStrategy.NONE)
-            .placeholder(R.drawable.user)
-            .into(binding.ivDetails)
+        userViewModel.amnesiaKiller(
+            User(
+                0,
+                intent.getStringExtra("id").toString().toInt(),
+                intent.getStringExtra("land").toString(),
+                intent.getStringExtra("manager").toString(),
+                intent.getStringExtra("naam").toString(),
+                intent.getStringExtra("password").toString(),
+                intent.getStringExtra("sbu").toString(),
+                intent.getStringExtra("username").toString(),
+                intent.getStringExtra("img").toString()
+            )
+        )
+        img = userViewModel.tmpUser.imageSrc
+        id = userViewModel.tmpUser.id.toString()
+        username = userViewModel.tmpUser.username
+        password = userViewModel.tmpUser.password
+        naam = userViewModel.tmpUser.naam
+        land = userViewModel.tmpUser.land
+        sbu = userViewModel.tmpUser.sbu
+        manager = userViewModel.tmpUser.manager
+            Glide.with(this).load(
+                img
+            ).fitCenter().skipMemoryCache(true).diskCacheStrategy(DiskCacheStrategy.NONE)
+                .placeholder(R.drawable.user)
+                .into(binding.ivDetails)
         binding.tvDetails.text = "\tid:\t\t\t $id\n\n" +
                 "\tusername:\t\t\t $username\n\n" +
                 "\tpassword:\t\t\t $password\n\n" +

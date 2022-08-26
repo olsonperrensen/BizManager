@@ -11,6 +11,7 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
 
     val readAllData: LiveData<List<User>>
     private val repository: UserRepository
+    lateinit var tmpUser: User
 
     init {
         val userDao = UserDatabase.getDatabase(application).userDao()
@@ -22,5 +23,9 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.addUser(user)
         }
+    }
+
+    fun amnesiaKiller(u_user: User) {
+        tmpUser = u_user
     }
 }
