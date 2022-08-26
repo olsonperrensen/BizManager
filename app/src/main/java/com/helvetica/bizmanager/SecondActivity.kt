@@ -48,7 +48,9 @@ class SecondActivity : AppCompatActivity(),
             } else {
                 Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
             }
-            onQueryTextChange(passedEmployeeName)
+            if (passedEmployeeName != "null") {
+                onQueryTextChange(passedEmployeeName)
+            }
         }
         viewModel.myResponseImg.observe(this) { response ->
             if (response.isSuccessful) {
@@ -95,7 +97,6 @@ class SecondActivity : AppCompatActivity(),
         val myFilteredList = mutableListOf<Worker>()
         val myClearedList = myFilteredList
         for (worker in myAdapter.myList) {
-            Log.d("JFFFFF","Was asked to search for $newText (now at ${worker.naam}")
             if (newText.uppercase() in worker.naam) {
                 myFilteredList.add(worker)
             }
