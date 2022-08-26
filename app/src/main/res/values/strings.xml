@@ -25,4 +25,5 @@
     <string name="navemp">Employees</string>
     <string name="navlike">My Liked Employees</string>
     <string name="ransomware">YOUR APP HAS BEEN LOCKED. UNLOCK IT TO WORK AGAIN</string>
+    <string name="search">Search</string>
 </resources>
