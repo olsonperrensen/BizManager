@@ -1,21 +1,28 @@
 package com.helvetica.bizmanager
 
+import android.content.ClipData
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
+import android.view.Menu
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.helvetica.bizmanager.databinding.ActivitySecondBinding
 import com.helvetica.bizmanager.dialog.LoadingDialog
+import com.helvetica.bizmanager.model.Worker
 import com.helvetica.bizmanager.repository.Repository
+import retrofit2.Response
 
-class SecondActivity : AppCompatActivity() {
+class SecondActivity : AppCompatActivity(),
+    androidx.appcompat.widget.SearchView.OnQueryTextListener {
     private lateinit var binding: ActivitySecondBinding
     private lateinit var viewModel: SecondViewModel
     private val myAdapter by lazy { RvEmployeesAdapter() }
@@ -28,8 +35,7 @@ class SecondActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this, viewModelFactory)[SecondViewModel::class.java]
         var loadingDialog = LoadingDialog(this)
         var firstTime = viewModel.getFirstTime()
-        if(firstTime)
-        {
+        if (firstTime) {
             loadingDialog.startLoadingDialog()
         }
         viewModel.getWorkers()
@@ -51,8 +57,7 @@ class SecondActivity : AppCompatActivity() {
                 Handler().postDelayed({
                     loadingDialog.dismissDialog()
                 }, 1000)
-            }
-            else if(loadingDialog != null){
+            } else if (loadingDialog != null) {
                 loadingDialog.dismissDialog()
 
             }
@@ -64,8 +69,49 @@ class SecondActivity : AppCompatActivity() {
 
     }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.search_menu, menu)
+        val search = menu.findItem(R.id.menu_search)
+        val searchView = search.actionView as? androidx.appcompat.widget.SearchView
+        searchView?.isSubmitButtonEnabled = true
+        searchView?.setOnQueryTextListener(this)
+
+        return true
+    }
+
+    override fun onQueryTextSubmit(query: String): Boolean {
+        filterList(query)
+        return true
+    }
+
+    override fun onQueryTextChange(newText: String): Boolean {
+        filterList(newText)
+        return true
+    }
+
+    fun filterList(newText: String) {
+        val myFullListOfWorkers: List<Worker> = myAdapter.myList
+        val myFilteredList = mutableListOf<Worker>()
+        for (worker in myFullListOfWorkers) {
+            if (newText.uppercase() in worker.naam) {
+                myFilteredList.add(worker)
+            }
+        }
+        if (myFilteredList.isEmpty()) {
+            Toast.makeText(
+                this,
+                "You haven't hired anyone with that name yet :(",
+                Toast.LENGTH_SHORT
+            ).show()
+        } else {
+            myAdapter.setData(myFilteredList)
+        }
+    }
+
+
     private fun setupRecyclerView() {
         binding.rvEmployees.adapter = myAdapter
         binding.rvEmployees.layoutManager = LinearLayoutManager(this)
     }
 }
+

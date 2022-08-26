@@ -14,7 +14,7 @@ import com.helvetica.bizmanager.model.Worker
 import com.helvetica.bizmanager.model.WorkerImg
 
 class RvEmployeesAdapter() : RecyclerView.Adapter<RvEmployeesAdapter.MyViewHolder>() {
-    private var myList = emptyList<Worker>()
+    var myList = emptyList<Worker>()
     private var myListImg = emptyList<WorkerImg>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
