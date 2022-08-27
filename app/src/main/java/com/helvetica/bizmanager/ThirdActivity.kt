@@ -4,6 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
@@ -17,6 +20,34 @@ import java.util.jar.Manifest
 class ThirdActivity : AppCompatActivity() {
     private lateinit var binding: ActivityThirdBinding
     private lateinit var userViewModel: UserViewModel
+
+    //    ANIM
+    private val rotateOpen: Animation by lazy {
+        AnimationUtils.loadAnimation(
+            this,
+            R.anim.rotate_open_anim
+        )
+    }
+    private val rotateClose: Animation by lazy {
+        AnimationUtils.loadAnimation(
+            this,
+            R.anim.rotate_close_anim
+        )
+    }
+    private val fromBottom: Animation by lazy {
+        AnimationUtils.loadAnimation(
+            this,
+            R.anim.from_bottom_anim
+        )
+    }
+    private val toBottom: Animation by lazy {
+        AnimationUtils.loadAnimation(
+            this,
+            R.anim.to_bottom_anim
+        )
+    }
+    private var isClicked = false
+
 
     //    FIELDS FOR DB
     private lateinit var img: String
@@ -72,8 +103,43 @@ class ThirdActivity : AppCompatActivity() {
                 "\tcountry:\t\t\t $land\n\n" +
                 "\tsbu:\t\t\t $sbu\n\n" +
                 "\tmanager:\t\t\t $manager\n\n"
+        binding.fabExpand.setOnClickListener {
+            onExpandButtonClicked()
+        }
         binding.fabLike?.setOnClickListener {
             insertDataToDatabase()
+        }
+        binding.fabContact?.setOnClickListener {
+            Toast.makeText(this, "Contact btn clicked!", Toast.LENGTH_SHORT).show()
+        }
+
+    }
+
+    private fun onExpandButtonClicked() {
+        setVisibility(isClicked)
+        setAnimation(isClicked)
+        isClicked = !isClicked
+    }
+
+    private fun setVisibility(isClicked: Boolean) {
+        if (!isClicked) {
+            binding.fabLike?.visibility = View.VISIBLE
+            binding.fabContact?.visibility = View.VISIBLE
+        } else {
+            binding.fabLike?.visibility = View.GONE
+            binding.fabContact?.visibility = View.GONE
+        }
+    }
+
+    private fun setAnimation(isClicked: Boolean) {
+        if (!isClicked) {
+            binding.fabLike?.startAnimation(fromBottom)
+            binding.fabContact?.startAnimation(fromBottom)
+            binding.fabExpand.startAnimation(rotateOpen)
+        } else {
+            binding.fabLike?.startAnimation(toBottom)
+            binding.fabContact?.startAnimation(toBottom)
+            binding.fabExpand.startAnimation(rotateClose)
         }
     }
 
