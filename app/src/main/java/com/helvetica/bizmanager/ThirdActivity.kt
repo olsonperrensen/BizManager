@@ -12,6 +12,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.helvetica.bizmanager.data.User
 import com.helvetica.bizmanager.data.UserViewModel
 import com.helvetica.bizmanager.databinding.ActivityThirdBinding
+import java.util.jar.Manifest
 
 class ThirdActivity : AppCompatActivity() {
     private lateinit var binding: ActivityThirdBinding
@@ -26,11 +27,18 @@ class ThirdActivity : AppCompatActivity() {
     private lateinit var land: String
     private lateinit var sbu: String
     private lateinit var manager: String
+
+    //    WRITE CONTACT
+    private val TAG = "ADD_CONTACT_TAG"
+    private lateinit var contactPermissions: Array<String>
+    private val WRITE_CONTACT_PERMISSION_CODE = 100
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_third)
         userViewModel = ViewModelProvider(this)[UserViewModel::class.java]
         val intent = intent
+        contactPermissions = arrayOf(android.Manifest.permission.WRITE_CONTACTS)
         userViewModel.amnesiaKiller(
             User(
                 0,
@@ -52,11 +60,11 @@ class ThirdActivity : AppCompatActivity() {
         land = userViewModel.tmpUser.land
         sbu = userViewModel.tmpUser.sbu
         manager = userViewModel.tmpUser.manager
-            Glide.with(this).load(
-                img
-            ).fitCenter().skipMemoryCache(true).diskCacheStrategy(DiskCacheStrategy.NONE)
-                .placeholder(R.drawable.user)
-                .into(binding.ivDetails)
+        Glide.with(this).load(
+            img
+        ).fitCenter().skipMemoryCache(true).diskCacheStrategy(DiskCacheStrategy.NONE)
+            .placeholder(R.drawable.user)
+            .into(binding.ivDetails)
         binding.tvDetails.text = "\tid:\t\t\t $id\n\n" +
                 "\tusername:\t\t\t $username\n\n" +
                 "\tpassword:\t\t\t $password\n\n" +
@@ -64,7 +72,7 @@ class ThirdActivity : AppCompatActivity() {
                 "\tcountry:\t\t\t $land\n\n" +
                 "\tsbu:\t\t\t $sbu\n\n" +
                 "\tmanager:\t\t\t $manager\n\n"
-        binding.fab.setOnClickListener {
+        binding.fabLike?.setOnClickListener {
             insertDataToDatabase()
         }
     }
