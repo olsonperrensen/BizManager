@@ -1,13 +1,22 @@
 package com.helvetica.bizmanager
 
+import android.content.ContentProvider
+import android.content.ContentProviderOperation
+import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.text.TextUtils
+import android.util.Log
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.widget.TextView
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
@@ -15,6 +24,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.helvetica.bizmanager.data.User
 import com.helvetica.bizmanager.data.UserViewModel
 import com.helvetica.bizmanager.databinding.ActivityThirdBinding
+import java.lang.Exception
 import java.util.jar.Manifest
 
 class ThirdActivity : AppCompatActivity() {
@@ -110,11 +120,17 @@ class ThirdActivity : AppCompatActivity() {
             insertDataToDatabase()
         }
         binding.fabContact?.setOnClickListener {
-            Toast.makeText(this, "Contact btn clicked!", Toast.LENGTH_SHORT).show()
+            if (isWriteContactPermissionEnabled()) {
+                saveContact()
+            } else {
+                requestWriteContactPermission()
+            }
+
         }
 
     }
 
+    //    FAB STUFF
     private fun onExpandButtonClicked() {
         setVisibility(isClicked)
         setAnimation(isClicked)
@@ -143,6 +159,93 @@ class ThirdActivity : AppCompatActivity() {
         }
     }
 
+    //    CONTACTS FN
+    private fun isWriteContactPermissionEnabled(): Boolean {
+        return ContextCompat.checkSelfPermission(
+            this,
+            android.Manifest.permission.WRITE_CONTACTS
+        ) == PackageManager.PERMISSION_GRANTED
+    }
+
+    private fun requestWriteContactPermission() {
+        ActivityCompat.requestPermissions(this, contactPermissions, WRITE_CONTACT_PERMISSION_CODE)
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (grantResults.isNotEmpty()) {
+            if (requestCode == WRITE_CONTACT_PERMISSION_CODE) {
+                val haveWriteContactPermission =
+                    grantResults[0] == PackageManager.PERMISSION_GRANTED
+                if (haveWriteContactPermission) {
+                    saveContact()
+                } else {
+                    Toast.makeText(
+                        this,
+                        "You didn't gave us permission to access your contacts :(",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+        }
+    }
+
+    private fun saveContact() {
+        val firstName = naam.split(" ")[0]
+        val lastName = naam.split(" ")[1]
+        val cpo = ArrayList<ContentProviderOperation>()
+        val rawContactId = cpo.size
+        cpo.add(
+            ContentProviderOperation.newInsert(
+                ContactsContract.RawContacts.CONTENT_URI
+            ).withValue(ContactsContract.RawContacts.ACCOUNT_TYPE, null)
+                .withValue(ContactsContract.RawContacts.ACCOUNT_NAME, null).build()
+        )
+//        FN - LN
+        cpo.add(
+            ContentProviderOperation.newInsert(
+                ContactsContract.Data.CONTENT_URI
+            ).withValueBackReference(ContactsContract.RawContacts.Data.RAW_CONTACT_ID, rawContactId)
+                .withValue(
+                    ContactsContract.RawContacts.Data.MIMETYPE,
+                    ContactsContract.CommonDataKinds.StructuredName.CONTENT_ITEM_TYPE
+                )
+                .withValue(ContactsContract.CommonDataKinds.StructuredName.GIVEN_NAME, firstName)
+                .withValue(ContactsContract.CommonDataKinds.StructuredName.FAMILY_NAME, lastName)
+                .build()
+        )
+// NUM
+        cpo.add(
+            ContentProviderOperation.newInsert(
+                ContactsContract.Data.CONTENT_URI
+            ).withValueBackReference(ContactsContract.RawContacts.Data.RAW_CONTACT_ID, rawContactId)
+                .withValue(
+                    ContactsContract.RawContacts.Data.MIMETYPE,
+                    ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE
+                )
+                .withValue(ContactsContract.CommonDataKinds.Phone.NUMBER, "+32480123456")
+                .withValue(
+                    ContactsContract.CommonDataKinds.Phone.TYPE,
+                    ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE
+                )
+                .build()
+        )
+//        ACTUALLY SAVE THE CONTACT
+        try {
+            contentResolver.applyBatch(ContactsContract.AUTHORITY, cpo)
+            Toast.makeText(this, "Saved!", Toast.LENGTH_SHORT).show()
+        } catch (e: Exception) {
+            Log.d("contactSaving", "Error ${e.message}")
+            Toast.makeText(this, "Could not save contact", Toast.LENGTH_SHORT).show()
+        }
+
+    }
+
+    //    LIKED EMPLOYEES TO DB
     private fun insertDataToDatabase() {
         if (inputCheck(
                 img,
