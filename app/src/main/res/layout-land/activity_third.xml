@@ -45,7 +45,7 @@
             android:visibility="gone"
             app:backgroundTint="#8B9DFF"
             app:layout_constraintBottom_toTopOf="@+id/fabLike"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabLike"
@@ -58,7 +58,7 @@
             android:visibility="gone"
             app:backgroundTint="#FFA7A7"
             app:layout_constraintBottom_toTopOf="@+id/fabExpand"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabExpand"
