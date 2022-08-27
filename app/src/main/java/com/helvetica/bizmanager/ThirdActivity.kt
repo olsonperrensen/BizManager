@@ -26,6 +26,7 @@ import com.helvetica.bizmanager.data.UserViewModel
 import com.helvetica.bizmanager.databinding.ActivityThirdBinding
 import java.lang.Exception
 import java.util.jar.Manifest
+import java.util.logging.Handler
 
 class ThirdActivity : AppCompatActivity() {
     private lateinit var binding: ActivityThirdBinding
@@ -237,7 +238,13 @@ class ThirdActivity : AppCompatActivity() {
 //        ACTUALLY SAVE THE CONTACT
         try {
             contentResolver.applyBatch(ContactsContract.AUTHORITY, cpo)
-            Toast.makeText(this, "Saved!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Saved to your contacts list!", Toast.LENGTH_SHORT).show()
+            android.os.Handler().postDelayed({
+                val intent = Intent(
+                    Intent.ACTION_DEFAULT,
+                    ContactsContract.Contacts.CONTENT_URI
+                ); startActivity(intent);
+            }, 1200)
         } catch (e: Exception) {
             Log.d("contactSaving", "Error ${e.message}")
             Toast.makeText(this, "Could not save contact", Toast.LENGTH_SHORT).show()
